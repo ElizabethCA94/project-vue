@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <title>Vue</title>
     <style>
         .error{
@@ -16,6 +17,10 @@
 </head>
 <body>
     <div id="app">
+        <router-link to="/foo">Go to Foo</router-link>
+        <router-link to="/bar">Go to Bar</router-link>
+        <!-- component matched by the route will render here, varia el contenido de la página -->
+        <router-view></router-view>
         <div v-html="content_html"></div>
         <img v-bind:src="src" :alt="text">
         {{message}}
