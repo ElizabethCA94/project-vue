@@ -1,5 +1,5 @@
 const Lists = {
-    name: "Lists",
+    name: "ListsPerson",
     template: `
         <div>
             <ul>
