@@ -1,15 +1,15 @@
-const Lists = {
+const ListsProgramming = {
     name: "ListsProgramming",
     template: `
         <div>
             <ul>
-                <li v-for="person in people">{{person}}</li>
+                <li v-for="l in language">{{l}}</li>
             </ul>
         </div>
     `,
     data: function(){
         return {
-            people: ['andres', 'juan', 'pepe']
+            language: ['C#', 'PHP', 'Java', 'JavaScript']
         }
     }
 }

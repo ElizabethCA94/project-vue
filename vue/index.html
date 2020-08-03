@@ -21,7 +21,8 @@
 
         <div id="app">
             <router-link to="/">Home</router-link>
-            <router-link to="/Lists">List</router-link>
+            <router-link to="/lists_person">List person</router-link>
+            <router-link to="/lists_programming">List programming</router-link>
             <!-- component matched by the route will render here, varia el contenido de la página -->
             <router-view></router-view>
             <div v-html="content_html"></div>
@@ -34,7 +35,9 @@
             <h1 v-show="p_error">Verifica si la propiedad es true con show, desaparece con css el elemento</h1>
         </div>
     </div>
-    <script src="js/components/Lists.js"></script>
+    <script src="js/components/ListsPerson.js"></script>
+    <script src="js/components/ListsProgramming.js"></script>
+    <script src="js/components/ListsAlert.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
