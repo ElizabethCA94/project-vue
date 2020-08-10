@@ -1,3 +1,11 @@
+const About = {
+    template: '#about'
+};
+const PageNotFound = {
+    template: '#pagenotfound'
+};
+
+
 const router = new VueRouter({
     base:"rutas",
     routes:[
@@ -8,9 +16,23 @@ const router = new VueRouter({
         {
             path: '/lists_programming',
             component: ListsProgramming
-        }
+        },
+        {
+            path: '/about',
+            redirect: '/about-us'
+        },
+        {
+            path: '/about-us',
+            component: About
+        },
+        {
+            path: '*',
+            component: PageNotFound
+        },
     ]
 })
+
+
 
 const app = new Vue({
     el:'#app',

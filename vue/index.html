@@ -19,10 +19,24 @@
 <body>
     <div class="container">
 
-        <div id="app">
+        <div id="app" v-cloak >
             <router-link to="/">Home</router-link>
             <router-link to="/lists_person">List person</router-link>
             <router-link to="/lists_programming">List programming</router-link>
+            <router-link to="/about">About</router-link>
+            <router-link to="/otroLink">Otro</router-link>
+            <script type="text/x-template" id="about">
+                <div>
+                    <h1>About me</h1>
+                    <p>Lorem ipsum dolor sit amet.</p>    
+                </div>
+            </script>
+            <script type="text/x-template" id="pagenotfound">
+                <div>
+                    <h1>ERROR!</h1>
+                    <p>Page not found</p>    
+                </div>
+            </script>
             <!-- component matched by the route will render here, varia el contenido de la página -->
             <router-view></router-view>
             <div v-html="content_html"></div>
