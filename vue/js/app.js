@@ -1,3 +1,6 @@
+const Home = {
+    template: '#home'
+};
 const About = {
     template: '#about'
 };
@@ -9,6 +12,10 @@ const PageNotFound = {
 const router = new VueRouter({
     base:"rutas",
     routes:[
+        {
+            path: '/',
+            component: Home
+        },
         {
             path: '/lists_person',
             component: ListsPerson
@@ -37,6 +44,10 @@ const router = new VueRouter({
 const app = new Vue({
     el:'#app',
     router,
+    // información sobre rutas donde  ha ingresado el usuario, información sobre el path
+    mounted(){
+        console.log(this.$route)
+    },
     data: {
         message: 'Hello world',
         value: 5,
