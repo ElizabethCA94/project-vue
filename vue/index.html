@@ -25,6 +25,16 @@
             <router-link to="/lists_programming">List programming</router-link>
             <router-link to="/about">About</router-link>
             <router-link to="/otroLink">Otro</router-link>
+
+            <modal-bootstrap>
+                <p>Esto es un contenido para nuestro modal </p>
+            </modal-bootstrap>
+
+
+             <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Launch demo modal
+            </button>
             <script type="text/x-template" id="home">
                 <div>
                     <h1>Home</h1>
@@ -55,6 +65,14 @@
             <h1 v-show="p_error">Verifica si la propiedad es true con show, desaparece con css el elemento</h1>
         </div>
     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    
+    <script src="js/components/Slot.js"></script>
     <script src="js/components/ListsPerson.js"></script>
     <script src="js/components/ListsProgramming.js"></script>
     <script src="js/components/ListsAlert.js"></script>
