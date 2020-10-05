@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <title>Vue</title>
+
 </head>
 <body>
     <div id="app">
@@ -14,8 +16,10 @@
        <ul>
            <li v-for="(person, index) in people">
                 {{index}} - {{person}}
+                <span v-if="index == people.length-1">Este es el ultimo elemento</span>
             </li>
        </ul>
+       <button v-on:click="filterPeople">Filtra más de 5 caracteres</button>
     </div>
     <script src="js/app.js"></script>
 </body>

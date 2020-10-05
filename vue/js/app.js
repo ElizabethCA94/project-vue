@@ -7,11 +7,17 @@ const About = {
 const PageNotFound = {
     template: '#pagenotfound'
 };
+const ListsPerson = {
+    template: '#lists_person'
+};
+const ListsProgramming = {
+    template: '#lists_programming'
+};
 
 
 const router = new VueRouter({
-    base:"rutas",
-    routes:[
+    base: "rutas",
+    routes: [
         {
             path: '/',
             component: Home
@@ -42,16 +48,16 @@ const router = new VueRouter({
 
 
 const app = new Vue({
-    el:'#app',
+    el: '#app',
     router,
     // información sobre rutas donde  ha ingresado el usuario, información sobre el path
-    mounted(){
+    mounted() {
         console.log(this.$route)
     },
     data: {
         message: 'Hello world',
         value: 5,
-        isVisible: false, 
+        isVisible: false,
         people: ['andres', 'juan', 'pepe'],
         content_html: "<h1>Hola mundo</h1>",
         src: "https://imagenmix.net/wp-content/uploads/2016/09/imagenes-bonitas.jpg",
@@ -63,24 +69,35 @@ const app = new Vue({
     computed: {
         // a computed getter
         reversedMessage: function () {
-          // `this` points to the vm instance
-          return this.message.split('').reverse().join('')
+            // `this` points to the vm instance
+            return this.message.split('').reverse().join('')
         }
     },
     methods: {
-        calculatesum(value1,value2){
-            return value1+value2;
+        //Filtro para arry
+        filterPeople: function(){
+            //funcion de flecha, incluye cada uno de los items del array,
+            //evalua en base a una condicion
+            this.people = this.people.filter(
+                person => {
+                    return person.length > 5
+                })
         },
-        incrementar(){
+
+        
+        calculatesum(value1, value2) {
+            return value1 + value2;
+        },
+        incrementar() {
             this.numero++;
         },
-        decrementar(){
+        decrementar() {
             this.numero--;
         }
     },
     watch: {
-        numero: function(val){
-            console.log("watch:"+val)
+        numero: function (val) {
+            console.log("watch:" + val)
         }
     }
 });
