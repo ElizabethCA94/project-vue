@@ -51,6 +51,7 @@ const app = new Vue({
         message: 'Hello world',
         value: 5,
         isVisible: false,
+        filtroEdad: 20,
         people: ['andres', 'juan', 'pepe'],
         content_html: "<h1>Hola mundo</h1>",
         src: "https://imagenmix.net/wp-content/uploads/2016/09/imagenes-bonitas.jpg",
@@ -64,6 +65,11 @@ const app = new Vue({
             { name: "Ximena", surname: "rios", age: 22 },
             { name: "Luisa", surname: "guzman", age: 20 },
         ],
+        copyArrayObjects:[]
+    },
+    //funcion de vue, la primera funcion que se ejecuta 
+    created: function(){
+        this.copyArrayObjects = this.arrayObjects
     },
     computed: {
         // a computed getter
@@ -74,9 +80,10 @@ const app = new Vue({
     },
     methods: {
         filterPeopleObjects: function(){
+            this.arrayObjects = this.copyArrayObjects
             this.arrayObjects = this.arrayObjects.filter(
                 person => {
-                    return person.age > 20
+                    return person.age > this.filtroEdad
                 }
             )
         },
