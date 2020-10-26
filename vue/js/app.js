@@ -10,18 +10,18 @@ const PageNotFound = {
 
 
 const router = new VueRouter({
-    base:"rutas",
-    routes:[
+    base: "rutas",
+    routes: [
         {
             path: '/',
             component: Home
         },
         {
-            path: '/lists_person',
+            path: '/ListsPerson',
             component: ListsPerson
         },
         {
-            path: '/lists_programming',
+            path: '/ListsProgramming',
             component: ListsProgramming
         },
         {
@@ -37,48 +37,69 @@ const router = new VueRouter({
             component: PageNotFound
         },
     ],
-});
+})
 
 const app = new Vue({
-    el:'#app',
     router,
+    el: '#app',
+   
     // información sobre rutas donde  ha ingresado el usuario, información sobre el path
     mounted(){
-        console.log(this.$route)
+       console.log(this.$route)
     },
     data: {
         message: 'Hello world',
         value: 5,
-        isVisible: false, 
+        isVisible: false,
         people: ['andres', 'juan', 'pepe'],
         content_html: "<h1>Hola mundo</h1>",
         src: "https://imagenmix.net/wp-content/uploads/2016/09/imagenes-bonitas.jpg",
         text: "Descripcion de nuestra imagen",
         numero: 20,
         v_model: "Hola v-model",
-        p_error: false
+        p_error: false,
+        arrayObjects: [
+            { name: "Andres", surname: "cruz", age: 28 },
+            { name: "Leonardo", surname: "leon", age: 25 },
+            { name: "Ximena", surname: "rios", age: 22 },
+            { name: "Luisa", surname: "guzman", age: 20 },
+        ],
     },
     computed: {
         // a computed getter
         reversedMessage: function () {
-          // `this` points to the vm instance
-          return this.message.split('').reverse().join('')
+            // `this` points to the vm instance
+            return this.message.split('').reverse().join('')
         }
     },
     methods: {
-        calculatesum(value1,value2){
-            return value1+value2;
+        filterPeopleObjects: function(){
+            this.arrayObjects = this.arrayObjects.filter(
+                person => {
+                    return person.age > 20
+                }
+            )
         },
-        incrementar(){
+        filterPeople: function () {
+            this.people = this.people.filter(
+                person => {
+                    return person.length > 5
+                })
+        },
+        calculatesum(value1, value2) {
+            return value1 + value2;
+        },
+        incrementar() {
             this.numero++
         },
-        decrementar(){
+        decrementar() {
             this.numero--
-        }
+        },
+        
     },
     watch: {
-        numero: function(val){
-            console.log("watch:"+val)
+        numero: function (val) {
+            console.log("watch:" + val)
         }
     }
 });
